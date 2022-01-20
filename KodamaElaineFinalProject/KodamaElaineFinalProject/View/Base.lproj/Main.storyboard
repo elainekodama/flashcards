@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nxg-52-rs7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nxg-52-rs7">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -23,13 +24,6 @@
                                 <color key="barTintColor" red="0.79039961099624634" green="0.90719789266586304" blue="0.94354742765426636" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="search"/>
                             </searchBar>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zpV-b8-4hm">
-                                <rect key="frame" x="-16" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Title" id="7BB-az-Zgf"/>
-                                </items>
-                            </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wGn-OF-qrw">
                                 <rect key="frame" x="1" y="95" width="375" height="523"/>
                                 <color key="backgroundColor" red="0.79039961099624634" green="0.90719789266586304" blue="0.94354742765426636" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -160,33 +154,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="6Kb-QA-5Tj">
-                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem title="Folders" id="KwT-Qw-ltr">
-                                        <connections>
-                                            <action selector="userDidTappedFolders:" destination="mdg-OP-evB" id="6ck-Is-98f"/>
-                                            <segue destination="hkj-ha-4be" kind="presentation" modalPresentationStyle="fullScreen" id="YEp-kd-2oz"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="wid-2w-pd7"/>
-                                    <barButtonItem title="Log Out" id="xUf-qj-Xgr">
-                                        <connections>
-                                            <action selector="userDidTappedLogOut:" destination="mdg-OP-evB" id="F7p-dN-vxh"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Khg-aL-KHt"/>
-                                    <barButtonItem systemItem="add" id="WP9-mu-fLY">
-                                        <connections>
-                                            <action selector="userDidTappedAdd:" destination="mdg-OP-evB" id="xT7-6I-uUx"/>
-                                            <segue destination="H8R-Os-Gk9" kind="presentation" id="ewq-KF-hj0"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                                <color key="barTintColor" red="0.66259247064590454" green="0.85317742824554443" blue="0.92597085237503052" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </toolbar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Vrz-Bx-5QS">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Vrz-Bx-5QS">
                                 <rect key="frame" x="0.0" y="88" width="375" height="530"/>
                                 <color key="backgroundColor" red="0.79039961099624634" green="0.90719789266586304" blue="0.94354742765426636" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pTY-Rc-QiZ">
@@ -220,16 +188,20 @@
                         <color key="backgroundColor" red="0.79039961099624634" green="0.90719789266586304" blue="0.94354742765426636" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="CS3-qN-3JI" firstAttribute="trailing" secondItem="Vrz-Bx-5QS" secondAttribute="trailing" id="0tz-ii-d5g"/>
-                            <constraint firstItem="Vrz-Bx-5QS" firstAttribute="top" secondItem="6Kb-QA-5Tj" secondAttribute="bottom" id="JIE-YQ-gKe"/>
                             <constraint firstItem="Vrz-Bx-5QS" firstAttribute="leading" secondItem="CS3-qN-3JI" secondAttribute="leading" id="TIv-D2-NFo"/>
                             <constraint firstItem="CS3-qN-3JI" firstAttribute="bottom" secondItem="Vrz-Bx-5QS" secondAttribute="bottom" id="dba-Ix-kHQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Favorites" id="n1D-67-k6N"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="n1D-67-k6N">
+                        <barButtonItem key="leftBarButtonItem" title="Back to Set" id="kVh-v7-2yp">
+                            <connections>
+                                <segue destination="hkj-ha-4be" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="el6-Hv-qKH"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qUt-uH-Mug"/>
+                    </navigationItem>
                     <connections>
-                        <outlet property="addButton" destination="WP9-mu-fLY" id="lut-tR-i7r"/>
                         <outlet property="collectionView" destination="Vrz-Bx-5QS" id="jOg-O5-h3c"/>
-                        <outlet property="userDidTappedFolders" destination="KwT-Qw-ltr" id="k74-7Z-8Sl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8pI-Lz-ran" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -244,19 +216,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="j38-nt-bMA">
-                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem title="Folders" id="nyA-fy-gZC"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="yyl-3f-tFe"/>
-                                    <barButtonItem title="Log Out" id="txI-iN-6No"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="rPF-An-MfZ"/>
-                                    <barButtonItem systemItem="add" id="lPe-sT-S20"/>
-                                </items>
-                                <color key="barTintColor" red="0.66259247064590454" green="0.85317742824554443" blue="0.92597085237503052" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </toolbar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="drt-N5-bQX">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="drt-N5-bQX">
                                 <rect key="frame" x="0.0" y="88" width="375" height="530"/>
                                 <color key="backgroundColor" red="0.79039961099624634" green="0.90719789266586304" blue="0.94354742765426636" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lYX-Xf-vEG">
@@ -293,15 +253,14 @@
                         <color key="backgroundColor" red="0.79039961099624634" green="0.90719789266586304" blue="0.94354742765426636" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="drt-N5-bQX" firstAttribute="leading" secondItem="6a2-L0-Dbg" secondAttribute="leading" id="NKV-hl-avk"/>
-                            <constraint firstItem="drt-N5-bQX" firstAttribute="top" secondItem="j38-nt-bMA" secondAttribute="bottom" id="Z4o-Zd-oJB"/>
                             <constraint firstItem="6a2-L0-Dbg" firstAttribute="bottom" secondItem="drt-N5-bQX" secondAttribute="bottom" id="bns-2J-AY8"/>
                             <constraint firstItem="6a2-L0-Dbg" firstAttribute="trailing" secondItem="drt-N5-bQX" secondAttribute="trailing" id="qs1-ov-7XJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Flashcards" id="XvV-DW-GYY">
-                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="YxC-mS-hCs">
+                        <barButtonItem key="leftBarButtonItem" title="Back to Set" id="YxC-mS-hCs">
                             <connections>
-                                <action selector="userDidTappedLogOut:" destination="Gp6-2F-Xqu" id="H4V-GC-gj6"/>
+                                <segue destination="hkj-ha-4be" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="ivu-b3-7Hy"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="l2z-Qh-YQq">
@@ -456,26 +415,6 @@
                                     <action selector="userDidTappedStarButton:" destination="OpF-Il-db7" eventType="touchUpInside" id="hvL-G8-4IR"/>
                                 </connections>
                             </button>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Ydd-XP-Cqu">
-                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                <items>
-                                    <barButtonItem title="Folders" id="ep2-Tu-RN4">
-                                        <connections>
-                                            <segue destination="hkj-ha-4be" kind="presentation" modalPresentationStyle="fullScreen" id="6nd-lH-C1M"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="H2A-zX-yq2"/>
-                                    <barButtonItem title="Log Out" id="3GK-DZ-W1D"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="6p0-DL-tVX"/>
-                                    <barButtonItem systemItem="add" id="I9r-4C-6tV">
-                                        <connections>
-                                            <segue destination="H8R-Os-Gk9" kind="presentation" id="QIt-ch-hVn"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                                <color key="barTintColor" red="0.66259247064590454" green="0.85317742824554443" blue="0.92597085237503052" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vMb-h8-vf8"/>
                         <color key="backgroundColor" red="0.79039961099624634" green="0.90719789266586304" blue="0.94354742765426636" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -502,11 +441,13 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Study" id="q1c-8Z-6Hl">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="4rH-pJ-Avs">
+                        <barButtonItem key="leftBarButtonItem" title="Back to Set" id="4rH-pJ-Avs">
                             <connections>
                                 <action selector="userDidTapBack:" destination="OpF-Il-db7" id="mjV-b4-Eo7"/>
+                                <segue destination="hkj-ha-4be" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Wt7-Su-QT7"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vfY-3Z-Kk6"/>
                     </navigationItem>
                     <connections>
                         <outlet property="cardSideLabel" destination="LpX-zx-vJe" id="Vqp-OS-THz"/>
@@ -572,7 +513,7 @@
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Age-K7-Thi">
-                                <rect key="frame" x="0.0" y="68.5" width="375" height="43.5"/>
+                                <rect key="frame" x="0.0" y="88.5" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Age-K7-Thi" id="KV4-uy-LVd">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -795,7 +736,7 @@
                     <connections>
                         <outlet property="saveButton" destination="IhW-QW-2ey" id="7JG-1O-DeU"/>
                         <outlet property="titleTextField" destination="pL8-iQ-cyE" id="wCb-pD-1q3"/>
-                        <segue destination="hkj-ha-4be" kind="presentation" identifier="newFolder" id="8zP-7L-2Ki"/>
+                        <segue destination="hkj-ha-4be" kind="presentation" identifier="newFolder" modalPresentationStyle="fullScreen" id="8zP-7L-2Ki"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xE3-De-fVs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1114,8 +1055,9 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hkj-ha-4be" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="vJc-EN-MFB"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="huW-re-k9A">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.66259247064590454" green="0.85317742824554443" blue="0.92597085237503052" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
@@ -1133,17 +1075,17 @@
             <objects>
                 <viewController title="Flashcard Set View Controller Scene" id="HAw-Ls-DOX" customClass="FlashcardSetViewController" customModule="KodamaElaineFinalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Y1z-vJ-IxV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" placeholder="Search Sets" translatesAutoresizingMaskIntoConstraints="NO" id="jtc-zn-dXm">
-                                <rect key="frame" x="0.0" y="56" width="375" height="51"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="51"/>
                                 <color key="backgroundColor" red="0.79039961099624634" green="0.90719789266586304" blue="0.94354742765426636" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="barTintColor" red="0.79039961099624634" green="0.90719789266586304" blue="0.94354742765426636" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="X66-Zg-vfd">
-                                <rect key="frame" x="0.0" y="107" width="375" height="540"/>
+                                <rect key="frame" x="0.0" y="95" width="375" height="572"/>
                                 <color key="backgroundColor" red="0.79039961099624634" green="0.90719789266586304" blue="0.94354742765426636" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="khD-aB-NCg">
                                     <size key="itemSize" width="128" height="128"/>
@@ -1240,19 +1182,18 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8zP-7L-2Ki"/>
+        <segue reference="Qso-tv-A65"/>
         <segue reference="b5c-9z-GsB"/>
-        <segue reference="Jmc-fZ-v9I"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BlankTemplate" width="368" height="245"/>
         <image name="Flashcard_Logo_Blank" width="150" height="151"/>
-        <image name="book" catalog="system" width="128" height="102"/>
+        <image name="book" catalog="system" width="128" height="99"/>
         <image name="folder" catalog="system" width="128" height="97"/>
         <image name="folder.badge.plus" catalog="system" width="128" height="91"/>
         <image name="globe" catalog="system" width="128" height="121"/>
         <image name="note.text" catalog="system" width="128" height="106"/>
-        <image name="shuffle" catalog="system" width="128" height="93"/>
+        <image name="shuffle" catalog="system" width="128" height="95"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">

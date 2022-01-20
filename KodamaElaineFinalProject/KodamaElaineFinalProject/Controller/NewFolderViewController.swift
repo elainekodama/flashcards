@@ -20,6 +20,7 @@ class NewFolderViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
     }
     
+    //save folder to firestore
     @IBAction func userDidTappedSave(_ sender: UIBarButtonItem) {
         if titleTextField.text != ""{
             let title = titleTextField.text ?? ""
@@ -29,13 +30,15 @@ class NewFolderViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    //after user creates name send it to next view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let flashcardSetViewController = segue.destination as? FlashcardSetViewController{
             let title = titleTextField.text //get a dictionary for a single document
             flashcardSetViewController.folderTitle = title ?? "" //pass over the folder title to flashcards view
         }
     }
-       
+    
+    //resign keyboard on enter
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         titleTextField.resignFirstResponder()
     }

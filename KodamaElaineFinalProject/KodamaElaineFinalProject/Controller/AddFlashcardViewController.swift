@@ -7,7 +7,7 @@
 
 import UIKit
 import PencilKit
-import  Firebase
+import Firebase
 class AddFlashcardViewController: UIViewController, PKCanvasViewDelegate, PKToolPickerObserver {
     
     @IBOutlet weak var frontCanvasView: PKCanvasView!
@@ -68,6 +68,7 @@ class AddFlashcardViewController: UIViewController, PKCanvasViewDelegate, PKTool
 //        canvasView.contentOffset = CGPoint(x: 0, y: -canvasView.adjustedContentInset.top)
 //    }
 
+    //save the drawing
     @IBAction func userDidTappedSave(_ sender: UIButton) {
         let front = saveDrawing(canvasView: frontCanvasView)
         let back = saveDrawing(canvasView: backCanvasView)
@@ -76,11 +77,13 @@ class AddFlashcardViewController: UIViewController, PKCanvasViewDelegate, PKTool
         clearDrawings()
     }
     
+    //replace drawing with a new one
     func clearDrawings(){
         frontCanvasView.drawing = PKDrawing()
         backCanvasView.drawing = PKDrawing()
     }
 
+    //store the front and back of flashcard as a picture
     func saveDrawing(canvasView: PKCanvasView) -> Data{
         UIGraphicsBeginImageContextWithOptions(canvasView.bounds.size, false, UIScreen.main.scale)
         canvasView.drawHierarchy(in: canvasView.bounds, afterScreenUpdates: true)

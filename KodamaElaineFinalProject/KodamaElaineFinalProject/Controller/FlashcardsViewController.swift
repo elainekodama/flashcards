@@ -31,6 +31,7 @@ class FlashcardsViewController: UIViewController, UICollectionViewDataSource, UI
         super.viewWillAppear(true)
     }
     
+    //get flashcards on start up
     func getFlashcards(){
         FirestoreModel.shared.getFlashcards(flashcardSetTitle: setTitle, folderTitle: folderTitle, completionHandler: { querySnapshot, error in
             if let error = error{
@@ -47,14 +48,15 @@ class FlashcardsViewController: UIViewController, UICollectionViewDataSource, UI
         })
     }
 
+    //make a new flashcard
     @IBAction func userDidTappedAdd(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "addFlashcard", sender: self)
     }
     
+    //recycle collection view
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return flashcards.count
     }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FolderCell", for: indexPath)
         let data = flashcards[indexPath.row] //get a dictionary for a single document
@@ -66,15 +68,12 @@ class FlashcardsViewController: UIViewController, UICollectionViewDataSource, UI
 
     }
     
+    //make a new flashcard
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let addFlashcardViewController = segue.destination as? AddFlashcardViewController{
             // Pass the selected object to the new view controller
             addFlashcardViewController.folderTitle = folderTitle //title of folder
             addFlashcardViewController.setTitle = setTitle
         }
-    }
-    
-    @IBAction func userDidTappedLogOut(_ sender: UIBarButtonItem) {
-        UserModel.shared.signOut()
     }
 }

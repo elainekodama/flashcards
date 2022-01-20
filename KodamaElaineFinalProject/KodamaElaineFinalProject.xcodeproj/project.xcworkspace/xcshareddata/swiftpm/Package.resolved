@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/firebase/abseil-cpp-SwiftPM.git",
         "state": {
           "branch": null,
-          "revision": "ff5f5f0a3d3266836b9d722bb73cabdf7057482e",
-          "version": "0.20200225.3"
+          "revision": "fffc3c2729be5747390ad02d5100291a0d9ad26a",
+          "version": "0.20200225.4"
         }
       },
       {
@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/firebase/boringssl-SwiftPM.git",
         "state": {
           "branch": null,
-          "revision": "15889fadef7078dfa1392b0e2b08f3d0e9797104",
-          "version": "0.7.1"
+          "revision": "734a8247442fde37df4364c21f6a0085b6a36728",
+          "version": "0.7.2"
         }
       },
       {
@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/firebase/firebase-ios-sdk.git",
         "state": {
           "branch": null,
-          "revision": "c6328a01c4db4c5dfd5ce0159a48a129ef6f4505",
-          "version": "7.11.0"
+          "revision": "b97bfcd2e5eecc7aa7e1aeb27d097d610876cf93",
+          "version": "7.11.1"
         }
       },
       {
@@ -33,8 +33,8 @@
         "repositoryURL": "https://github.com/google/GoogleAppMeasurement.git",
         "state": {
           "branch": null,
-          "revision": "7a263c22915db6e421dbf84bd3b4367a870588d9",
-          "version": "7.11.0"
+          "revision": "22cb3ab5588200b210ae01e42665f52ac4e8ad28",
+          "version": "7.11.1"
         }
       },
       {
@@ -51,8 +51,8 @@
         "repositoryURL": "https://github.com/google/GoogleUtilities.git",
         "state": {
           "branch": null,
-          "revision": "1c47ea135322768023ecdcc9db79bf3df821209f",
-          "version": "7.3.0"
+          "revision": "b3bb0c5551fb3f80ca939829639ab5b093edd14f",
+          "version": "7.7.0"
         }
       },
       {
@@ -69,8 +69,8 @@
         "repositoryURL": "https://github.com/google/gtm-session-fetcher.git",
         "state": {
           "branch": null,
-          "revision": "91ed3d188eb95705fef3c249453b81f32dc557d1",
-          "version": "1.5.0"
+          "revision": "bc6a19702ac76ac4e488b68148710eb815f9bc56",
+          "version": "1.7.0"
         }
       },
       {
@@ -105,8 +105,8 @@
         "repositoryURL": "https://github.com/apple/swift-protobuf.git",
         "state": {
           "branch": null,
-          "revision": "bfe4255ff60f22a41cafa113059668571ed5d461",
-          "version": "1.16.0"
+          "revision": "7e2c5f3cbbeea68e004915e3a8961e20bd11d824",
+          "version": "1.18.0"
         }
       }
     ]

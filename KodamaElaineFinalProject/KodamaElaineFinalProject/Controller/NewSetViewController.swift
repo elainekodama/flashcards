@@ -42,7 +42,7 @@ class NewSetViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
+    //store set in firebase
     @IBAction func userDidTappedSave(_ sender: UIBarButtonItem) {
         if titleTextField.text != ""{
             let title = titleTextField.text ?? ""
@@ -64,6 +64,8 @@ class NewSetViewController: UIViewController, UITextFieldDelegate {
         }
 
     }
+    
+    //view the individual flashcards for set
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let flashcardsViewController = segue.destination as? FlashcardsViewController{
             // Pass the selected object to the new view controller
@@ -72,6 +74,7 @@ class NewSetViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    //resign text field
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         titleTextField.resignFirstResponder()
     }

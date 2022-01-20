@@ -32,6 +32,7 @@ class FlashcardSetViewController: UIViewController, UICollectionViewDelegate, UI
         navigationBarTitle.title = folderTitle
         }
 
+    //store flashcard sets on start up
     func getFlashcardSets(){
         //need to pass title on to this vc
 //        FirestoreModel.shared.getFlashcardSets(folderTitle: folderTitle, completionHandler: { querySnapshot, error in
@@ -53,37 +54,36 @@ class FlashcardSetViewController: UIViewController, UICollectionViewDelegate, UI
         collectionView.reloadData() //refresh data
     }
 
-        @IBAction func userDidTappedBackground(_ sender: UITapGestureRecognizer) {
-            setSearchBar.resignFirstResponder()
-        }
+    //resign keyboard on background tap or return key
+    @IBAction func userDidTappedBackground(_ sender: UITapGestureRecognizer) {
+        setSearchBar.resignFirstResponder()
+    }
+    func userDidTappedReturnKey(_ textView: UISearchBar) {
+        setSearchBar.resignFirstResponder()
+    }
 
-        func userDidTappedReturnKey(_ textView: UISearchBar) {
-            setSearchBar.resignFirstResponder()
-        }
+    //recycle collection view
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of items
+        return titles.count
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "flashcardSetCell", for: indexPath)
+        //folders = [[documentID : folderDoc]]
+        let setTitle = titles[indexPath.row]
 
-        func numberOfSections(in collectionView: UICollectionView) -> Int {
-            // #warning Incomplete implementation, return the number of sections
-            return 1
-        }
+        print("collection view data: \(data)")
+        (cell as! FlashcardSetCollectionViewCell).titleLabel.text = setTitle as? String
+        (cell as! FlashcardSetCollectionViewCell).imageView.image = UIImage(systemName: "folder.fill")
 
+        return cell
+    }
 
-        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            // #warning Incomplete implementation, return the number of items
-            return titles.count
-        }
-//
-        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "flashcardSetCell", for: indexPath)
-            //folders = [[documentID : folderDoc]]
-            let setTitle = titles[indexPath.row]
-
-            print("collection view data: \(data)")
-            (cell as! FlashcardSetCollectionViewCell).titleLabel.text = setTitle as? String
-            (cell as! FlashcardSetCollectionViewCell).imageView.image = UIImage(systemName: "folder.fill")
-
-            return cell
-        }
-
+    //adjust ui for iphone or ipad
     override func viewDidLayoutSubviews() {
         //print("view did layout subviews")
         let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
@@ -98,6 +98,7 @@ class FlashcardSetViewController: UIViewController, UICollectionViewDelegate, UI
         }
     }
     
+    //open up theset and view the individual flashcards
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let flashcardsViewController = segue.destination as? FlashcardsViewController{
             let indexPath = collectionView.indexPathsForSelectedItems!.first!.row
@@ -110,6 +111,7 @@ class FlashcardSetViewController: UIViewController, UICollectionViewDelegate, UI
         }
     }
     
+    //new set
     @IBAction func userDidTappedAdd(_ sender: UIBarButtonItem) {
         //performSegue(withIdentifier: "NewFolderSegue", sender: self)
     }

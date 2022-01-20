@@ -17,7 +17,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     var userModel = UserModel.shared
             
     override func viewDidLoad() {
-      
         super.viewDidLoad()
         emailTextField.delegate = self
         passwordTextField.delegate = self
@@ -25,9 +24,10 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         signInButton.isEnabled = false
     }
     
+    //can only click sign in button if there is text in the email and password
     func configureSignInButton(){
-        if emailTextField.hasText && passwordTextField.hasText{ //if there is text in both field and view
-            signInButton.isEnabled = true //save button can be enabled
+        if emailTextField.hasText && passwordTextField.hasText{
+            signInButton.isEnabled = true
         }
         else{ //text view OR field does not have text
             signInButton.isEnabled = false //save button is disabled
@@ -39,6 +39,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         configureSignInButton()
     }
     
+    //hide/display keyboard once enter is clicked
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if emailTextField.isFirstResponder {
             emailTextField.resignFirstResponder()
@@ -50,6 +51,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    //resign keyboard if background is tapped
     @IBAction func backgroundDidTapped(_ sender: UITapGestureRecognizer) {
         if emailTextField.isFirstResponder {
             emailTextField.resignFirstResponder()
@@ -60,6 +62,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    //alert user of incorrect log in
     func incorrectLogIn(){
         let alert = UIAlertController(title: "Error logging in", message: nil, preferredStyle: .alert)
         //option to clear all will set default values
@@ -76,18 +79,19 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         emailTextField.becomeFirstResponder()
     }
     
+    //check the email and password when sign in button is pressed
     @IBAction func userDidTappedSignIn(_ sender: UIButton) {
         passwordTextField.resignFirstResponder()
         if let email = emailTextField.text, let password = passwordTextField.text{
             userModel.signInWithEmail(email: email, password: password) { (authDataResult, error) in
-                if let error = error{
+                if let error = error {
                     self.incorrectLogIn()
                 }
             }
-            
         }
-   }
+    }
     
+    //open sign up page when user does not have account
     @IBAction func userDidTappedSignUp(_ sender: UIButton) {
         performSegue(withIdentifier: "NewUserSegue", sender: self) //segue to new user page
     }

@@ -31,6 +31,7 @@ class FolderCollectionViewController: UIViewController, UICollectionViewDelegate
 ////            let currentUser = firebase.loggedInUser?.email
         }
     
+    //get all folders on startup
     func getFolders(){
         FirestoreModel.shared.getAllFolders(completionHandler: { querySnapshot, error in
             if let error = error{
@@ -52,45 +53,45 @@ class FolderCollectionViewController: UIViewController, UICollectionViewDelegate
         collectionView.reloadData() //refresh data
     }
     
-        @IBAction func userDidTappedBackground(_ sender: UITapGestureRecognizer) {
-            foldersSearchBar.resignFirstResponder()
-        }
+    //resign keyboard on background tap or enter key
+    @IBAction func userDidTappedBackground(_ sender: UITapGestureRecognizer) {
+        foldersSearchBar.resignFirstResponder()
+    }
+    func userDidTappedReturnKey(_ textView: UISearchBar) {
+        foldersSearchBar.resignFirstResponder()
+    }
+
+    //recycle collectionviews
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of items
+        return titles.count
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FolderCell", for: indexPath)
+        //folders = [[documentID : folderDoc]]
+        let title = titles[indexPath.row]
         
-        func userDidTappedReturnKey(_ textView: UISearchBar) {
-            foldersSearchBar.resignFirstResponder()
-        }
+        print("collection view data: \(data)")
+        (cell as! FolderCollectionViewCell).folderTextLabel.text = title
+        (cell as! FolderCollectionViewCell).folderImageView.image = UIImage(systemName: "folder.fill")
 
-        func numberOfSections(in collectionView: UICollectionView) -> Int {
-            // #warning Incomplete implementation, return the number of sections
-            return 1
-        }
-
-        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            // #warning Incomplete implementation, return the number of items
-            return titles.count
-        }
-
-        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FolderCell", for: indexPath)
-            //folders = [[documentID : folderDoc]]
-            let title = titles[indexPath.row]
-            
-            print("collection view data: \(data)")
-            (cell as! FolderCollectionViewCell).folderTextLabel.text = title
-            (cell as! FolderCollectionViewCell).folderImageView.image = UIImage(systemName: "folder.fill")
-
-            return cell
-        }
+        return cell
+    }
     
+    //set the size of the view to fit device
     override func viewDidLayoutSubviews() {
         //print("view did layout subviews")
         let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
         flowLayout?.estimatedItemSize = .zero
-        if UIDevice.current.userInterfaceIdiom == .phone{ //devise is phone
+        if UIDevice.current.userInterfaceIdiom == .phone{ //phone
             let size = (collectionView.bounds.width / 3) - 15 //calculate a little less than half width
             flowLayout?.itemSize = CGSize(width: size, height: size) //display two cells per row
         }
-        else { //device is ipad
+        else { //ipad
             let size = (collectionView.bounds.width / 5) - 15 //calculate a little less than half width
             flowLayout?.itemSize = CGSize(width: size, height: size)
         }
@@ -104,11 +105,17 @@ class FolderCollectionViewController: UIViewController, UICollectionViewDelegate
             flashcardSetViewController.folderTitle = title //pass over the folder title to flashcards view
         }
     }
- 
     
+    @IBAction func userDidTappedFolder(_ sender: FolderCollectionViewCell) {
+        performSegue(withIdentifier: "folderToSet", sender: self)
+    }
+ 
+    //make a new folder
     @IBAction func userDidTappedAdd(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "NewFolderSegue", sender: self)
     }
+    
+    //log out
     @IBAction func userDidTappedLogOut(_ sender: UIBarButtonItem) {
         userModel.signOut()
     }

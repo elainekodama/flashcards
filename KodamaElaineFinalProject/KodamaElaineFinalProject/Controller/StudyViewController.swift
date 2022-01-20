@@ -34,6 +34,7 @@ class StudyViewController: UIViewController {
         starButton.setImage(UIImage(systemName: "star.fill"), for: .selected) //filled star if button is
         updateUI()
 
+        //define if front or back showing
         if let label = cardSideLabel.text{
             if label.elementsEqual("Front"){
                 questionOrAnswer = true
@@ -48,6 +49,7 @@ class StudyViewController: UIViewController {
         }
     }
     
+    //get the array of flashcards on scene
     func getFlashcards(){
         let flashcardArray = firestoreModel.getFlashcards(flashcardSetTitle: setTitle, folderTitle: folderTitle, completionHandler: { querySnapshot, error in
             if let error = error{
@@ -63,6 +65,7 @@ class StudyViewController: UIViewController {
         })
     }
 
+    //display the front of flashcared
     func getFrontImage() -> UIImage?{
         if let frontData = currentFlashcard?.frontFlashcard, //if there is data for the front flashcard
            let frontImage = firestoreModel.getImageFromPNGData(pngData: frontData) { //convert data to image
@@ -71,6 +74,7 @@ class StudyViewController: UIViewController {
         return nil //there is no flashcard
     }
     
+    //display back of flashcard
     func getBackImage() -> UIImage?{
         if let backData = currentFlashcard?.backFlashcard, //if there is data for the back flashcard
            let backimage = firestoreModel.getImageFromPNGData(pngData: backData){ //convert data to image
@@ -79,7 +83,7 @@ class StudyViewController: UIViewController {
         return nil //there is no flashcard
     }
 
-    //update questionAnswer on card
+    //display front or back of card accordingly
     func updateUI(){
         if questionOrAnswer == true{ //if front should be displayed
             frontBack.image = getFrontImage()
@@ -97,7 +101,7 @@ class StudyViewController: UIViewController {
         }
     }
 
-
+    //display the previous card
     @IBAction func userDidSwipedLeft(_ sender: UISwipeGestureRecognizer) {
         let moveLeft = UIViewPropertyAnimator(duration: 0.2, curve: .linear){
             var left = CGAffineTransform.identity
@@ -128,6 +132,7 @@ class StudyViewController: UIViewController {
         }
     }
 
+    //display the next card
     @IBAction func userDidSwipedRight(_ sender: UISwipeGestureRecognizer) {
         let moveRight = UIViewPropertyAnimator(duration: 0.2, curve: .linear){
             var right = CGAffineTransform.identity
@@ -158,6 +163,7 @@ class StudyViewController: UIViewController {
         }
     }
 
+    //switch view of card from front to back or back to front
     @IBAction func userDidSingleTap(_ sender: UITapGestureRecognizer) {
         if questionOrAnswer == true { //front is currently displayed
             questionOrAnswer = false //display back
@@ -168,11 +174,13 @@ class StudyViewController: UIViewController {
         updateUI()
     }
 
+    //fill the star button
     @IBAction func userDidTappedStarButton(_ sender: UIButton) {
        //flashModel.toggleFavorite()
         updateUI()
     }
 
+    //shuffle cards
     @IBAction func userDidTappedShuffle(_ sender: UIButton) {
         //flashModel.shuffle()
         updateUI()

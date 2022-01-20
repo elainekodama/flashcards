@@ -24,15 +24,17 @@ class NewUserViewController: UIViewController, UITextFieldDelegate{
         // Do any additional setup after loading the view.
     }
     
+    //user can only pres sign in if text in both email and password
     func configureSignInButton(){
-        if newEmailTextField.hasText && newPasswordTextField.hasText{ //if there is text in both field and view
-            newSignInButton.isEnabled = true //save button can be enabled
+        if newEmailTextField.hasText && newPasswordTextField.hasText{
+            newSignInButton.isEnabled = true
         }
-        else{ //text view OR field does not have text
-            newSignInButton.isEnabled = false //save button is disabled
+        else{
+            newSignInButton.isEnabled = false
         }
     }
 
+    //resign keyboard when background tapped or enter key pressed
     @IBAction func backgroundDidTapped(_ sender: UITapGestureRecognizer) {
         if newEmailTextField.isFirstResponder {
             newEmailTextField.resignFirstResponder()
@@ -42,7 +44,6 @@ class NewUserViewController: UIViewController, UITextFieldDelegate{
             newPasswordTextField.resignFirstResponder()
         }
     }
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if newEmailTextField.isFirstResponder {
             newEmailTextField.resignFirstResponder()
@@ -54,10 +55,12 @@ class NewUserViewController: UIViewController, UITextFieldDelegate{
         return true
     }
     
+    //change sign in button
     @IBAction func textFieldEditingDidChanged(_ sender: UITextField) {
         configureSignInButton()
     }
     
+    //user cannot create account for some reason
     func signUpError(){
         newEmailTextField.text = ""
         newPasswordTextField.text = ""
@@ -80,6 +83,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate{
 //        }
 //    }
     
+    //create account and show next scene or show error
     @IBAction func userDidTappedSignUp(_ sender: Any) {
         newPasswordTextField.resignFirstResponder()
         if let email = newEmailTextField.text, let password = newPasswordTextField.text{
