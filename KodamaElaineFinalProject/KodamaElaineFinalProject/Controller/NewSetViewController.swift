@@ -44,14 +44,17 @@ class NewSetViewController: UIViewController, UITextFieldDelegate {
     
     //store set in firebase
     @IBAction func userDidTappedSave(_ sender: UIBarButtonItem) {
+        print("Saved")
         if titleTextField.text != ""{
             let title = titleTextField.text ?? ""
-            FirestoreModel.shared.addFlashcardSet(folderTitle: folderTitle, setTitle: title, isPublic: publicSwitch.isOn, displayName: displayNameSwitch.isOn, template: template)
+            //TODO: blank string since no folder title
+            folderTitle = ""
+            FirestoreModel.shared.addFlashcardSet(setTitle: title)
             
             if publicSwitch.isOn{
                 addToPublic()
             }
-            performSegue(withIdentifier: "newFolderCreated", sender: self)
+            performSegue(withIdentifier: "newSet", sender: self)
         }
         
         func addToPublic(){

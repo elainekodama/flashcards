@@ -29,10 +29,16 @@ class FirestoreModel{
     func getFlashcardSets(folderTitle: String, completionHandler: @escaping (QuerySnapshot?, Error?) -> Void){
         guard let userId = UserModel.shared.loggedInUser?.uid else { return }
         
-        fs.collection("flashcardSet").whereField("uid", isEqualTo: userId).whereField("folderTitle", isEqualTo: folderTitle).getDocuments { (querySnapshot, error) in
+        fs.collection("flashcardSet").whereField("uid", isEqualTo: userId).getDocuments { (querySnapshot, error) in
             completionHandler(querySnapshot, error)
         }
-
+    }
+    func getFlashcardSets(completionHandler: @escaping (QuerySnapshot?, Error?) -> Void){
+        guard let userId = UserModel.shared.loggedInUser?.uid else { return }
+        
+        fs.collection("flashcardSet").whereField("uid", isEqualTo: userId).getDocuments { (querySnapshot, error) in //get all folders for the UID
+            completionHandler(querySnapshot, error)
+        }
     }
     
     func getFlashcards(flashcardSetTitle: String, folderTitle: String, completionHandler: @escaping (QuerySnapshot?, Error?) -> Void){
@@ -62,11 +68,24 @@ class FirestoreModel{
        
         fs.collection("flashcardSet").document(setTitle).setData(([
             "uid": UserModel.shared.loggedInUser!.uid,
-            "folderTitle": folderTitle, //folder that deck is in
+//            "folderTitle": folderTitle, //folder that deck is in
             //"setTitle" : setTitle, //title for flashcard deck
             "isPublic": isPublic, //if user wants the folder to be public
             "displayName" : displayName, //if public, and user wants to have their name shown
             "template" : template //whatever template the user chooses
+        ])) { error in
+            if let error = error {
+                print("Error writing document: \(error)")
+            }
+            else {
+                print("Document successfully written!")
+            }
+        }
+    }
+    func addFlashcardSet(setTitle: String){
+       
+        fs.collection("flashcardSet").document(setTitle).setData(([
+            "uid": UserModel.shared.loggedInUser!.uid,
         ])) { error in
             if let error = error {
                 print("Error writing document: \(error)")

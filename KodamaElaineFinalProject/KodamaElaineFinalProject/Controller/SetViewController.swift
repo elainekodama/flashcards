@@ -11,42 +11,45 @@ class SetViewController: UIViewController, UICollectionViewDelegate, UICollectio
 
     @IBOutlet weak var setSearchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var settingsButton: UIBarButtonItem!
+//    @IBOutlet weak var settingsButton: UIBarButtonItem!
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet var backgroundTap: UITapGestureRecognizer!
-    var folderTitle: String!
     @IBOutlet weak var backButton: UIBarButtonItem!
+    @IBOutlet weak var navigationBarTitle: UINavigationItem!
+
+//    var folderTitle: String!
+
     //    var flashcardSets = [String]()
     var titles = [String]()
     var data = [Any]()
     var userModel = UserModel.shared
-    @IBOutlet weak var navigationBarTitle: UINavigationItem!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         //collectionView.becomeFirstResponder()
         collectionView.dataSource = self
         setSearchBar.delegate = self
-        getFlashcardSets()
-        navigationBarTitle.title = folderTitle
+        getSets()
+//        navigationBarTitle.title = folderTitle
         }
 
     //store flashcard sets on start up
-    func getFlashcardSets(){
+    func getSets(){
         //need to pass title on to this vc
-//        FirestoreModel.shared.getFlashcardSets(folderTitle: folderTitle, completionHandler: { querySnapshot, error in
-        FirestoreModel.shared.getFlashcardSets(folderTitle: "folderTitle", completionHandler: { querySnapshot, error in
-            if error != nil{
-                print("Problem getting documents")
-            }
-            else{
-                for document in querySnapshot!.documents {
-                    let setTitles = document.documentID
-                    self.titles.append(setTitles)
+//        FirestoreModel.shared.getFlashcardSets(folderTitle: "folderTitle", completionHandler: {
+        FirestoreModel.shared.getFlashcardSets(completionHandler: {
+            querySnapshot, error in
+                if error != nil {
+                    print("Problem getting documents")
                 }
-                self.collectionView.reloadData()
-            }
+                else {
+                    for document in querySnapshot!.documents {
+                        let setTitle = document.documentID as String
+                        self.titles.append(setTitle)
+                    }
+                    self.collectionView.reloadData()
+                }
         })
     }
 
@@ -98,7 +101,7 @@ class SetViewController: UIViewController, UICollectionViewDelegate, UICollectio
         }
     }
     
-    //open up theset and view the individual flashcards
+    //open up the set and view the individual flashcards
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let flashcardsViewController = segue.destination as? FlashcardsViewController{
             let indexPath = collectionView.indexPathsForSelectedItems!.first!.row

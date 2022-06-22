@@ -14,7 +14,8 @@ class FolderCollectionViewController: UIViewController, UICollectionViewDelegate
     @IBOutlet weak var settingsButton: UIBarButtonItem!
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet var backgroundTap: UITapGestureRecognizer!
-    var folders = [String : Any]() //folder name : array of flashcards
+    
+//    var folders = [String : Any]() //folder name : array of flashcards
     var titles = [String]() //titles of folders
     var data = [Any]() //
     var userModel = UserModel.shared
@@ -102,7 +103,9 @@ class FolderCollectionViewController: UIViewController, UICollectionViewDelegate
         if let flashcardSetViewController = segue.destination as? SetViewController{
             let indexPath = collectionView.indexPathsForSelectedItems!.first!.row
             let title = titles[indexPath] //get the index of the titles array and pass that as a string
-            flashcardSetViewController.folderTitle = title //pass over the folder title to flashcards view
+            
+//            TODO: pass over the folder title name to the set view controller
+//            flashcardSetViewController.folderTitle = title //pass over the folder title to flashcards view
         }
     }
     

@@ -629,7 +629,6 @@
                                         <barButtonItem key="rightBarButtonItem" title="Save" id="6Pk-TD-Zc2">
                                             <connections>
                                                 <action selector="userDidTappedSave:" destination="slK-n5-LHk" id="LLH-Cn-xjA"/>
-                                                <segue destination="ggJ-iD-vM2" kind="presentation" modalPresentationStyle="fullScreen" id="OTh-to-94a"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -673,6 +672,7 @@
                         <outlet property="publicSwitch" destination="zmz-Dy-aWH" id="dqb-CM-MVb"/>
                         <outlet property="saveButton" destination="6Pk-TD-Zc2" id="1fi-NH-VjU"/>
                         <outlet property="titleTextField" destination="kyk-ie-i3q" id="EWs-Zh-lGr"/>
+                        <segue destination="ggJ-iD-vM2" kind="presentation" identifier="newSet" modalPresentationStyle="fullScreen" id="JqU-MB-2PC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bda-5I-H8T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1182,7 +1182,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="ivu-b3-7Hy"/>
-        <segue reference="b5c-9z-GsB"/>
+        <segue reference="JqU-MB-2PC"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BlankTemplate" width="368" height="245"/>
