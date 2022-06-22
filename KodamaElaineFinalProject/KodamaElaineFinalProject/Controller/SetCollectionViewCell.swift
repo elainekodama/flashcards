@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FlashcardSetCollectionViewCell: UICollectionViewCell {
+class SetCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UITextField!
     

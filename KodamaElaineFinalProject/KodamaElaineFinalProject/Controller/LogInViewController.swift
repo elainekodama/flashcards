@@ -64,6 +64,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     
     //alert user of incorrect log in
     func incorrectLogIn(){
+        //TODO: not a popup but instead a red error
         let alert = UIAlertController(title: "Error logging in", message: nil, preferredStyle: .alert)
         //option to clear all will set default values
         let okay = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
@@ -84,7 +85,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.resignFirstResponder()
         if let email = emailTextField.text, let password = passwordTextField.text{
             userModel.signInWithEmail(email: email, password: password) { (authDataResult, error) in
-                if let error = error {
+                if error != nil {
                     self.incorrectLogIn()
                 }
             }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nxg-52-rs7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nxg-52-rs7">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -125,7 +125,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-3042.4000000000001" y="336.88155922038982"/>
+            <point key="canvasLocation" x="-3175" y="1877"/>
         </scene>
         <!--Favorites Nav Bar Controller-->
         <scene sceneID="l1Z-SP-MFT">
@@ -539,7 +539,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mNk-Vr-EhR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="lDG-W9-eIc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-3042" y="-367"/>
+            <point key="canvasLocation" x="-3175" y="1199"/>
         </scene>
         <!--Public Nav Bar Controller-->
         <scene sceneID="gu3-ac-8iH">
@@ -558,7 +558,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xmt-ek-WOc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2404" y="-367"/>
+            <point key="canvasLocation" x="-2404" y="1199"/>
         </scene>
         <!--New Set View Controller-->
         <scene sceneID="GQD-E2-HP4">
@@ -741,7 +741,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xE3-De-fVs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1636" y="337"/>
+            <point key="canvasLocation" x="-1636" y="1877"/>
         </scene>
         <!--Folders Nav Bar Controller-->
         <scene sceneID="XnI-pt-Q68">
@@ -759,7 +759,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="edL-wK-Zzg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2404" y="337"/>
+            <point key="canvasLocation" x="-2404" y="1877"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ZNW-u1-Guw">
@@ -774,7 +774,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZRk-aK-Sln" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4513" y="-30"/>
+            <point key="canvasLocation" x="-3175" y="-19"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="pfu-5w-vz4">
@@ -892,7 +892,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-3841" y="-367"/>
+            <point key="canvasLocation" x="-2404" y="-367"/>
         </scene>
         <!--New User View Controller-->
         <scene sceneID="dzo-oV-P4k">
@@ -987,7 +987,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-3842" y="337"/>
+            <point key="canvasLocation" x="-2404" y="352"/>
         </scene>
         <!--User Tab Bar Controller-->
         <scene sceneID="Sdb-Ta-Ik2">
@@ -1007,7 +1007,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="COT-Nv-tel" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1636" y="-367"/>
+            <point key="canvasLocation" x="-1636" y="1199"/>
         </scene>
         <!--Flashcards Nav Bar Controller-->
         <scene sceneID="aNd-LM-jau">
@@ -1053,7 +1053,7 @@
         <!--Navigation Controller-->
         <scene sceneID="1hv-Gc-Mz4">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hkj-ha-4be" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SetViewController" automaticallyAdjustsScrollViewInsets="NO" id="hkj-ha-4be" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="vJc-EN-MFB"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="huW-re-k9A">
@@ -1073,7 +1073,7 @@
         <!--Flashcard Set View Controller Scene-->
         <scene sceneID="BHW-ar-gT0">
             <objects>
-                <viewController title="Flashcard Set View Controller Scene" id="HAw-Ls-DOX" customClass="FlashcardSetViewController" customModule="KodamaElaineFinalProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Flashcard Set View Controller Scene" id="HAw-Ls-DOX" customClass="SetViewController" customModule="KodamaElaineFinalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Y1z-vJ-IxV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1094,7 +1094,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="flashcardSetCell" id="89i-5P-Te3" customClass="FlashcardSetCollectionViewCell" customModule="KodamaElaineFinalProject" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="flashcardSetCell" id="89i-5P-Te3" customClass="SetCollectionViewCell" customModule="KodamaElaineFinalProject" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="FnL-bW-9QF" customClass="FlashcardSetCollectionViewCell" customModule="KodamaElaineFinalProject" customModuleProvider="target">
@@ -1153,10 +1153,9 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Wb6-Cc-Tju">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="CBc-dj-ZFh">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="CBc-dj-ZFh">
                             <connections>
                                 <action selector="userDidTappedBackButton:" destination="HAw-Ls-DOX" id="GIg-9E-zEQ"/>
-                                <segue destination="Z84-YZ-pJX" kind="presentation" identifier="backToFolders" modalPresentationStyle="fullScreen" id="u21-ja-5QX"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="rDv-Pi-C9m">
@@ -1182,7 +1181,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Qso-tv-A65"/>
+        <segue reference="ivu-b3-7Hy"/>
         <segue reference="b5c-9z-GsB"/>
     </inferredMetricsTieBreakers>
     <resources>

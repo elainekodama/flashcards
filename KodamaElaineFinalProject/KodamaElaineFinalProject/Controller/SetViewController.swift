@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FlashcardSetViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
+class SetViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
 
     @IBOutlet weak var setSearchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -37,12 +37,12 @@ class FlashcardSetViewController: UIViewController, UICollectionViewDelegate, UI
         //need to pass title on to this vc
 //        FirestoreModel.shared.getFlashcardSets(folderTitle: folderTitle, completionHandler: { querySnapshot, error in
         FirestoreModel.shared.getFlashcardSets(folderTitle: "folderTitle", completionHandler: { querySnapshot, error in
-            if let error = error{
+            if error != nil{
                 print("Problem getting documents")
             }
             else{
                 for document in querySnapshot!.documents {
-                    var setTitles = document.documentID
+                    let setTitles = document.documentID
                     self.titles.append(setTitles)
                 }
                 self.collectionView.reloadData()
@@ -77,8 +77,8 @@ class FlashcardSetViewController: UIViewController, UICollectionViewDelegate, UI
         let setTitle = titles[indexPath.row]
 
         print("collection view data: \(data)")
-        (cell as! FlashcardSetCollectionViewCell).titleLabel.text = setTitle as? String
-        (cell as! FlashcardSetCollectionViewCell).imageView.image = UIImage(systemName: "folder.fill")
+        (cell as! SetCollectionViewCell).titleLabel.text = setTitle
+        (cell as! SetCollectionViewCell).imageView.image = UIImage(systemName: "folder.fill")
 
         return cell
     }
@@ -117,7 +117,10 @@ class FlashcardSetViewController: UIViewController, UICollectionViewDelegate, UI
     }
 
     @IBAction func userDidTappedBackButton(_ sender: UIBarButtonItem) {
-    performSegue(withIdentifier: "backToFolders", sender: self)
+//        performSegue(withIdentifier: "backToFolders", sender: self)
+        //TODO: log out for the back button instead of going back to folders
+            //deleted the segue for now (Present Modually, Full screen, same as destination)
+        userModel.signOut()
     }
     
 }

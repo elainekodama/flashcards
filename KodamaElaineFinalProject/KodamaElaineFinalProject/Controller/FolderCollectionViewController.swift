@@ -34,14 +34,14 @@ class FolderCollectionViewController: UIViewController, UICollectionViewDelegate
     //get all folders on startup
     func getFolders(){
         FirestoreModel.shared.getAllFolders(completionHandler: { querySnapshot, error in
-            if let error = error{
+            if error != nil{
                 print("Problem getting documents")
             }
             else{
                 for document in querySnapshot!.documents {
                     //self.folders.updateValue(document.data(), forKey: document.documentID) //list of Folder documents [String : Any]
                     //self.titles.append(document.data().keys)
-                    var folderTitle = document.documentID as String
+                    let folderTitle = document.documentID as String
                     self.titles.append(folderTitle)
                 }
                 self.collectionView.reloadData()
@@ -99,16 +99,16 @@ class FolderCollectionViewController: UIViewController, UICollectionViewDelegate
     
     // Pass the selected folder to the next view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let flashcardSetViewController = segue.destination as? FlashcardSetViewController{
+        if let flashcardSetViewController = segue.destination as? SetViewController{
             let indexPath = collectionView.indexPathsForSelectedItems!.first!.row
             let title = titles[indexPath] //get the index of the titles array and pass that as a string
             flashcardSetViewController.folderTitle = title //pass over the folder title to flashcards view
         }
     }
     
-    @IBAction func userDidTappedFolder(_ sender: FolderCollectionViewCell) {
-        performSegue(withIdentifier: "folderToSet", sender: self)
-    }
+//    @IBAction func userDidTappedFolder(_ sender: FolderCollectionViewCell) {
+//        performSegue(withIdentifier: "folderToSet", sender: self)
+//    }
  
     //make a new folder
     @IBAction func userDidTappedAdd(_ sender: UIBarButtonItem) {

@@ -12,7 +12,6 @@
 		7814555F263134D2002EFE9E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7814555C263134D2002EFE9E /* GoogleService-Info.plist */; };
 		7814556826313AED002EFE9E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7814556726313AED002EFE9E /* FirebaseAuth */; };
 		7814556A26313AED002EFE9E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 7814556926313AED002EFE9E /* FirebaseDatabase */; };
-		7814556C26313AED002EFE9E /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 7814556B26313AED002EFE9E /* FirebaseFirestoreSwift-Beta */; };
 		7814557F263144D7002EFE9E /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7814557E263144D7002EFE9E /* StudyViewController.swift */; };
 		78145580263144D7002EFE9E /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7814557E263144D7002EFE9E /* StudyViewController.swift */; };
 		78145581263144D7002EFE9E /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7814557E263144D7002EFE9E /* StudyViewController.swift */; };
@@ -53,10 +52,11 @@
 		785748B4263F320800AEC99A /* AddFlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785748B3263F320800AEC99A /* AddFlashcardViewController.swift */; };
 		785748B5263F320800AEC99A /* AddFlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785748B3263F320800AEC99A /* AddFlashcardViewController.swift */; };
 		785748B6263F320800AEC99A /* AddFlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785748B3263F320800AEC99A /* AddFlashcardViewController.swift */; };
+		78B3410028616D780056FE1B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 78B340FF28616D780056FE1B /* FirebaseFirestore */; };
 		78CB3F902664118100EAF173 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CB3F8F2664118100EAF173 /* FavoritesViewController.swift */; };
-		78CB3F922664A6C500EAF173 /* FlashcardSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CB3F912664A6C500EAF173 /* FlashcardSetViewController.swift */; };
+		78CB3F922664A6C500EAF173 /* SetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CB3F912664A6C500EAF173 /* SetViewController.swift */; };
 		78CB3F942664B02500EAF173 /* NewSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CB3F932664B02500EAF173 /* NewSetViewController.swift */; };
-		78CB3F962666E2C200EAF173 /* FlashcardSetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CB3F952666E2C200EAF173 /* FlashcardSetCollectionViewCell.swift */; };
+		78CB3F962666E2C200EAF173 /* SetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CB3F952666E2C200EAF173 /* SetCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,10 +106,11 @@
 		7856E3E4263E38F500B2CF99 /* PublicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicViewController.swift; sourceTree = "<group>"; };
 		785748AC263F2A5900AEC99A /* FlashcardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardsViewController.swift; sourceTree = "<group>"; };
 		785748B3263F320800AEC99A /* AddFlashcardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFlashcardViewController.swift; sourceTree = "<group>"; };
+		78B340FD28616D420056FE1B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		78CB3F8F2664118100EAF173 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
-		78CB3F912664A6C500EAF173 /* FlashcardSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardSetViewController.swift; sourceTree = "<group>"; };
+		78CB3F912664A6C500EAF173 /* SetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetViewController.swift; sourceTree = "<group>"; };
 		78CB3F932664B02500EAF173 /* NewSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSetViewController.swift; sourceTree = "<group>"; };
-		78CB3F952666E2C200EAF173 /* FlashcardSetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardSetCollectionViewCell.swift; sourceTree = "<group>"; };
+		78CB3F952666E2C200EAF173 /* SetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7814556C26313AED002EFE9E /* FirebaseFirestoreSwift-Beta in Frameworks */,
+				78B3410028616D780056FE1B /* FirebaseFirestore in Frameworks */,
 				7814556A26313AED002EFE9E /* FirebaseDatabase in Frameworks */,
 				7814556826313AED002EFE9E /* FirebaseAuth in Frameworks */,
 			);
@@ -147,6 +148,7 @@
 				7824594F262CCFBD007A8CCA /* KodamaElaineFinalProjectTests */,
 				7824595A262CCFBD007A8CCA /* KodamaElaineFinalProjectUITests */,
 				78245937262CCFBB007A8CCA /* Products */,
+				78B340FC28616D420056FE1B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -195,21 +197,21 @@
 		7824596C262CE091007A8CCA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				7824593D262CCFBB007A8CCA /* ViewController.swift */,
-				78245970262CE10C007A8CCA /* LogInViewController.swift */,
-				7814557E263144D7002EFE9E /* StudyViewController.swift */,
-				785305D426365C0C00E0E618 /* FolderCollectionViewCell.swift */,
-				785305F3263684A500E0E618 /* NewFolderViewController.swift */,
-				7856E3CD263BDC0F00B2CF99 /* NewUserViewController.swift */,
-				7856E3DA263DF2C500B2CF99 /* FolderCollectionViewController.swift */,
-				7856E3E4263E38F500B2CF99 /* PublicViewController.swift */,
-				785748AC263F2A5900AEC99A /* FlashcardsViewController.swift */,
 				785748B3263F320800AEC99A /* AddFlashcardViewController.swift */,
-				7855BB7D264316850044A09B /* FlashcardCollectionViewCell.swift */,
 				78CB3F8F2664118100EAF173 /* FavoritesViewController.swift */,
-				78CB3F912664A6C500EAF173 /* FlashcardSetViewController.swift */,
+				7855BB7D264316850044A09B /* FlashcardCollectionViewCell.swift */,
+				785748AC263F2A5900AEC99A /* FlashcardsViewController.swift */,
+				785305D426365C0C00E0E618 /* FolderCollectionViewCell.swift */,
+				7856E3DA263DF2C500B2CF99 /* FolderCollectionViewController.swift */,
+				78245970262CE10C007A8CCA /* LogInViewController.swift */,
+				785305F3263684A500E0E618 /* NewFolderViewController.swift */,
 				78CB3F932664B02500EAF173 /* NewSetViewController.swift */,
-				78CB3F952666E2C200EAF173 /* FlashcardSetCollectionViewCell.swift */,
+				7856E3CD263BDC0F00B2CF99 /* NewUserViewController.swift */,
+				7856E3E4263E38F500B2CF99 /* PublicViewController.swift */,
+				78CB3F952666E2C200EAF173 /* SetCollectionViewCell.swift */,
+				78CB3F912664A6C500EAF173 /* SetViewController.swift */,
+				7814557E263144D7002EFE9E /* StudyViewController.swift */,
+				7824593D262CCFBB007A8CCA /* ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -243,6 +245,14 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		78B340FC28616D420056FE1B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				78B340FD28616D420056FE1B /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -262,7 +272,7 @@
 			packageProductDependencies = (
 				7814556726313AED002EFE9E /* FirebaseAuth */,
 				7814556926313AED002EFE9E /* FirebaseDatabase */,
-				7814556B26313AED002EFE9E /* FirebaseFirestoreSwift-Beta */,
+				78B340FF28616D780056FE1B /* FirebaseFirestore */,
 			);
 			productName = KodamaElaineFinalProject;
 			productReference = 78245936262CCFBB007A8CCA /* KodamaElaineFinalProject.app */;
@@ -384,7 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78CB3F962666E2C200EAF173 /* FlashcardSetCollectionViewCell.swift in Sources */,
+				78CB3F962666E2C200EAF173 /* SetCollectionViewCell.swift in Sources */,
 				7814558926314624002EFE9E /* FlashcardsModel.swift in Sources */,
 				7855BB7E264316850044A09B /* FlashcardCollectionViewCell.swift in Sources */,
 				78245971262CE10C007A8CCA /* LogInViewController.swift in Sources */,
@@ -401,7 +411,7 @@
 				7856E3DB263DF2C500B2CF99 /* FolderCollectionViewController.swift in Sources */,
 				78CB3F942664B02500EAF173 /* NewSetViewController.swift in Sources */,
 				785305D526365C0C00E0E618 /* FolderCollectionViewCell.swift in Sources */,
-				78CB3F922664A6C500EAF173 /* FlashcardSetViewController.swift in Sources */,
+				78CB3F922664A6C500EAF173 /* SetViewController.swift in Sources */,
 				7856E3CE263BDC0F00B2CF99 /* NewUserViewController.swift in Sources */,
 				785305F4263684A500E0E618 /* NewFolderViewController.swift in Sources */,
 				785748AD263F2A5900AEC99A /* FlashcardsViewController.swift in Sources */,
@@ -802,10 +812,10 @@
 			package = 7814556626313AED002EFE9E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
 		};
-		7814556B26313AED002EFE9E /* FirebaseFirestoreSwift-Beta */ = {
+		78B340FF28616D780056FE1B /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7814556626313AED002EFE9E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = "FirebaseFirestoreSwift-Beta";
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

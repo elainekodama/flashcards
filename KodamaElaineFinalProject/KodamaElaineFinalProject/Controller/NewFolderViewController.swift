@@ -32,7 +32,7 @@ class NewFolderViewController: UIViewController, UITextFieldDelegate {
     
     //after user creates name send it to next view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let flashcardSetViewController = segue.destination as? FlashcardSetViewController{
+        if let flashcardSetViewController = segue.destination as? SetViewController{
             let title = titleTextField.text //get a dictionary for a single document
             flashcardSetViewController.folderTitle = title ?? "" //pass over the folder title to flashcards view
         }

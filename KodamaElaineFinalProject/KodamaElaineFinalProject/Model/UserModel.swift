@@ -52,7 +52,9 @@ class UserModel {
             if let user = user{
                 self.loggedInUser = user
                 /// Make the root view controller your home screen
-                let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "HomeTabBarViewController")
+//                let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "HomeTabBarViewController")
+                //TODO: bypassing the folder option for now. only doing sets
+                let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SetViewController")
                 UIApplication.shared.windows[0].rootViewController = viewController
                 UIApplication.shared.windows[0].makeKeyAndVisible()
             }
